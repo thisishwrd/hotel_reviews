@@ -10,7 +10,10 @@ warnings.filterwarnings("ignore")
 
 @st.cache(allow_output_mutation=True)
 def get_data():
-    dataframe = pd.read_csv('Hotel_Reviews_Main.csv')
+    url = 'https://drive.google.com/file/d/1beARL54xgLWxkD76WJ2SEKV2G37CgnTp/view?usp=sharing'
+    path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
+    dataframe = pd.read_csv(path)
+    
     return dataframe
 
 df = get_data()
